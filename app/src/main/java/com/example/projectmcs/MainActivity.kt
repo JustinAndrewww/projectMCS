@@ -20,6 +20,9 @@ import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
 
+    companion object{
+        lateinit var user: DBHelper.User
+    }
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

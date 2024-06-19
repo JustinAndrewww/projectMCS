@@ -42,22 +42,14 @@ class Profile : Fragment() {
             startActivity(intent)
         }
 
-        val sharedPreferences = requireActivity().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
         val tvUsername: TextView = view.findViewById(R.id.tvUsername)
         val tvEmail: TextView = view.findViewById(R.id.tvEmail)
         val tvPhone: TextView = view.findViewById(R.id.tvPhone)
 
 
-
-
-
-        username = sharedPreferences.getString("username", "fitz") ?: "N/A"
-        email = sharedPreferences.getString("email","fitz@puff.com") ?: "N/A"
-//        phone = sharedPreferences.getString("phone", '08123123123')
-
-        tvUsername.text =   "Name   : $username"
-        tvEmail.text =      "Email  : $email"
-//        tvPhone.text = phone.toString()
+        tvUsername.text =   "Name   : ${MainActivity.user.username}"
+        tvEmail.text =      "Email  : ${MainActivity.user.email}"
+        tvPhone.text = "Phone  : ${MainActivity.user.phone}"
 
     }
 

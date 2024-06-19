@@ -136,7 +136,9 @@ class DBHelper (context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null
             val email = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL))
             val phone = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PHONE))
 
-            return User(id,username,password, email, phone)
+            val user = User(id,username,password, email, phone)
+            MainActivity.user = user
+            return user
         }
 
         cursor.close()
